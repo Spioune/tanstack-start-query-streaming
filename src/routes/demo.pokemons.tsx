@@ -40,13 +40,13 @@ function TanStackQueryDemo() {
       <h1 className="text-2xl mb-4">Pokemons</h1>
       {/* <ul>{data?.map((p) => <li key={p.name}>{p.name}</li>)}</ul> */}
       <Suspense fallback={<div>Loading...</div>}>
-        <Test />
+        <Pokemons />
       </Suspense>
     </div>
   )
 }
 
-function Test() {
+function Pokemons() {
   const { data } = useSuspenseQuery({
     queryKey: ['pokemons'],
     queryFn: () => getPokemons(),

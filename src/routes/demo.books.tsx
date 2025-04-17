@@ -38,13 +38,13 @@ function TanStackQueryDemo() {
       <h1 className="text-2xl mb-4">Books</h1>
       {/* <ul>{data?.map((p) => <li key={p.name}>{p.name}</li>)}</ul> */}
       <Suspense fallback={<div>Loading...</div>}>
-        <Test />
+        <Books />
       </Suspense>
     </div>
   )
 }
 
-function Test() {
+function Books() {
   const booksPromise = Route.useLoaderData()
   const { data } = useSuspenseQuery({
     queryKey: ['books'],
